@@ -1,9 +1,9 @@
-import {Menu} from "./Components/Menu/Menu";
+import {Registro} from "./Components/Registro/Registro";
 
 function App() {
   return (
     <div>
-     <Menu/> 
+      <Registro/> 
     </div>
   );
 }
