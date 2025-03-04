@@ -1,72 +1,147 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-  }
-  
-  .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr; 
-    background-color: #ffffff; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    overflow: hidden; 
-    max-width: 1000px; 
-    width: 100%; 
-  }
-  .datos{
-    background-color: #ffffff; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  .beneficios{
-    background-color: #f9f9f9; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  
-  .input-box {
-    margin-bottom: 15px;
-  }
-  
-  .input-box input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
+.container {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
+}
 
-  .icon {
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  ul {
-    list-style-type: none; 
-    padding: 0;
-  }
+/* Sección del formulario */
+.formulario {
+  flex: 2;
+  padding: 40px;
+}
 
-  ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-  }
+.formulario h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.formulario .subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 8px 0; 
+  border: none; 
+  border-bottom: 1px solid #ccc; 
+  font-size: 16px;
+  outline: none;
+  background-color: transparent; 
+}
+
+.document-input {
+  display: flex;
+  gap: 10px;
+}
+
+.document-type {
+  flex: 1;
+  padding: 8px 0; 
+  border: none; 
+  border-bottom: 1px solid #ccc; 
+  font-size: 16px;
+  outline: none;
+  background-color: transparent; 
+}
+
+.document-type:focus {
+  border-bottom-color: #007bff; /* Cambia el color de la línea al enfocar */
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+.wrapper button{
+  position: center;
+  width: 50%;
+  height: 50px;
+  background: #343e49;
+  background-color: #343e49;
+  color:#ffffff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+}
+
+.register-button:hover {
+  background-color:  #343e49;
+}
+
+/* Sección de beneficios */
+.beneficios {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.beneficios h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.beneficios ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.beneficios ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.beneficios ul li::before {
+  content: "•";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+}
