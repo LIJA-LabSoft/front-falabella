@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import './Registro.css';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
+import { AiOutlineBell, AiOutlineFileText, AiOutlineStar } from "react-icons/ai";
+
 
 export const Registro = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +16,7 @@ export const Registro = () => {
       <div className="container">
 
         <div className="formulario">
-          <h1>Regístrate</h1>
+          <h1>Inicia sesión o regístrate para comprar</h1>
           <p className="subtitle">Ingresa tus datos personales y disfruta de una experiencia de compra más rápida.</p>
 
           <form>
@@ -59,6 +61,15 @@ export const Registro = () => {
               <span className="icon" onClick={togglePasswordVisibility}>
                 {showPassword ? <FiEye /> : <FiEyeOff />}
               </span>
+
+              <ul className="password-requisitos">
+                <li>Mín. 8 caracteres</li>
+                <li>1 número</li>
+                <li>1 mayúscula</li>
+                <li>1 minúscula</li>
+                <li>Sin espacio</li>
+                <li>Sin usar \¡¿"ºª·`´çñÑ</li>
+              </ul>
             </div>
 
             <button type="submit" className="register-button">Registrate</button>
@@ -66,19 +77,26 @@ export const Registro = () => {
         </div>
 
         <div className="beneficios">
-          <h2>Beneficios de registrarte</h2>
-          <ul>
-            <li>Recibir notificaciones en tiempo real de tus pedidos.</li>
-            <li>Revisar tus boletas online.</li>
-            <li>Guardar medios de pago y direcciones favoritas.</li>
-            <li>Ser parte de CMR Puntos, el mejor programa de beneficios.</li>
-          </ul>
-
-          <h2>Beneficios CMR Puntos</h2>
-          <ul>
-            <li>Canje de productos, experiencias, viajes y Gift Cards.</li>
-            <li>Promociones especiales, cupones de descuento y más.</li>
-          </ul>
+          <h2>Beneficios Falabella.com</h2>
+          <div className="beneficios-item">
+              <AiOutlineBell className="beneficios-icon" />
+              <span>Recibir notificaciones en tiempo real de tus pedidos.</span>
+          </div>
+          <div className="beneficios-item">
+            <AiOutlineFileText className="beneficios-icon" />
+            <span>Revisar tus boletas online.</span>
+          </div>
+          <div className="beneficios-item">
+            <AiOutlineStar className="beneficios-icon" />
+            <span>Guardar medios de pago y direcciones favoritas.</span>
+          </div>
+          <div className="beneficios-item">
+            <img src="https://www.cmrpuntos.com.co/static/media/logo.9c098baf.svg"
+                alt="logo CMR"
+                className= "cmr"
+            />
+            <span>Ser parte de CMR Puntos, el mejor programa de beneficios.</span>
+          </div>
         </div>
       </div>
     </div>

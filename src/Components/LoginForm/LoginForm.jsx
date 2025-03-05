@@ -27,7 +27,9 @@ export const LoginForm = () => {
 
             <div className="input-box">
                 <input type="password" placeholder="ingresa tu contraseña" required/>
-                <FiEyeOff className='icon'/>
+                <span className="icon" onClick={togglePasswordVisibility}>
+                    {showPassword ? <FiEye /> : <FiEyeOff />}
+                </span>
             </div>
 
             <div className="remember">

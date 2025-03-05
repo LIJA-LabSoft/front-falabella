@@ -19,7 +19,7 @@ body {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  max-width: 2000px;
   width: 100%;
   overflow: hidden;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 .formulario h1 {
-  font-size: 28px;
+  font-size: 24px;
   color: #333;
   margin-bottom: 10px;
 }
@@ -94,7 +94,17 @@ body {
   cursor: pointer;
   color: #666;
 }
+.password-requisitos {
+  list-style-type: disc; 
+  padding-left: 20px; 
+  margin-top: 10px; 
+  font-size: 12px; 
+  color: #333333; 
+}
 
+.password-requisitos li {
+  margin-bottom: 5px; 
+}
 .wrapper button{
   position: center;
   width: 50%;
@@ -115,8 +125,9 @@ body {
 /* Sección de beneficios */
 .beneficios {
   flex: 1;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 40px;
+  position: relative;
 }
 
 .beneficios h2 {
@@ -125,23 +136,27 @@ body {
   margin-bottom: 15px;
 }
 
-.beneficios ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 30px;
+.beneficios-item {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 15px;
 }
 
-.beneficios ul li {
+.beneficios-icon {
+  margin-right: 15px; 
+  color: #333; 
+  font-size: 40px; 
+}
+
+.beneficios-item span {
   font-size: 14px;
   color: #555;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  position: relative;
+}
+.beneficios-item .cmr {
+  width: 40px; 
+  height: 40px; 
+  object-fit: contain; 
+  margin-right: 15px; 
+
 }
 
-.beneficios ul li::before {
-  content: "•";
-  color: #007bff;
-  position: absolute;
-  left: 0;
-}
