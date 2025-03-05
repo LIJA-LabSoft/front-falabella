@@ -89,7 +89,7 @@ body {
 .password-input .icon {
   position: absolute;
   right: 10px;
-  top: 50%;
+  top:40%;
   transform: translateY(-50%);
   cursor: pointer;
   color: #666;
@@ -117,9 +117,54 @@ body {
   border-radius: 40px;
   font-size: 16px;
 }
+.password-input {
+  position: relative;
+  margin-bottom: 20px;
+}
 
-.register-button:hover {
-  background-color:  #343e49;
+/* Contenedor de requisitos con Flexbox */
+.password-requerimientos-flex {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  margin-top: 10px; 
+  font-size: 12px; 
+  color: #666; 
+}
+
+.requerimientos-fila {
+  display: flex;
+  gap: 10px; 
+}
+
+.requerimientos {
+  flex: 1; 
+  white-space: nowrap; 
+}
+
+.checkbox-label {
+  font-size: 14px; 
+  color: #333; 
+  line-height: 1.7; 
+  margin-left: 8px; 
+}
+
+input[type="checkbox"]:checked + .checkbox-label {
+  color: #343e49; 
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #343e49;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #ccc; 
 }
 
 /* Sección de beneficios */

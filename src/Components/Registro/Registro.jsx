@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import './Registro.css';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
-import { AiOutlineBell, AiOutlineFileText, AiOutlineStar } from "react-icons/ai";
-
+import { AiOutlineBell, AiOutlineFileText, AiOutlineStar,AiOutlineCreditCard } from "react-icons/ai";
+import { SlPresent } from "react-icons/sl";
 
 export const Registro = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+  const [isChecked1, setIsChecked1] = useState(false); // Estado del primer checkbox
+  const [isChecked2, setIsChecked2] = useState(false); // Estado del segundo checkbox
+
+  const handleCheckbox1Change = () => {
+    setIsChecked1(!isChecked1); // Cambia el estado del primer checkbox
+  };
+
+  const handleCheckbox2Change = () => {
+    setIsChecked2(!isChecked2); // Cambia el estado del segundo checkbox
   };
 
   return (
@@ -62,17 +72,45 @@ export const Registro = () => {
                 {showPassword ? <FiEye /> : <FiEyeOff />}
               </span>
 
-              <ul className="password-requisitos">
-                <li>Mín. 8 caracteres</li>
-                <li>1 número</li>
-                <li>1 mayúscula</li>
-                <li>1 minúscula</li>
-                <li>Sin espacio</li>
-                <li>Sin usar \¡¿"ºª·`´çñÑ</li>
-              </ul>
+              <div className="password-requerimientos-flex">
+                <div className="requerimientos-fila">
+                  <div className="requerimientos">• Mín. 8 caracteres</div>
+                  <div className="requerimientos">• 1 número</div>
+                  <div className="requerimientos">• 1 mayúscula</div>
+                </div>
+                <div className="requerimientos-fila">
+                  <div className="requerimientos">• 1 minúscula</div>
+                  <div className="requerimientos">• Sin espacio</div>
+                  <div className="requerimientos">• Sin usar \¡¿"ºª·`´çñÑ</div>
+                </div>
+              </div>
+            </div>    
+             {/* Checkboxes */}
+            <div>
+              <input
+                type="checkbox"
+                id="checkbox1"
+                checked={isChecked1}
+                onChange={handleCheckbox1Change}
+              />
+              <label htmlFor="checkbox1" className="checkbox-label">
+                Quiero acumular CMR Puntos en mis compras según el reglamento del programa y autorizo el tratamiento de mis datos personales.
+              </label>
             </div>
 
-            <button type="submit" className="register-button">Registrate</button>
+            <div>
+              <input
+                type="checkbox"
+                id="checkbox2"
+                checked={isChecked2}
+                onChange={handleCheckbox2Change}
+              />
+              <label htmlFor="checkbox2" className="checkbox-label">
+                Acepto los términos y condiciones de falabella.com y autorizo el tratamiento de mis datos personales.
+              </label>
+            </div>
+          <button disabled={!isChecked2}>Registrarse</button>
+            
           </form>
         </div>
 
@@ -96,6 +134,16 @@ export const Registro = () => {
                 className= "cmr"
             />
             <span>Ser parte de CMR Puntos, el mejor programa de beneficios.</span>
+          </div>
+
+          <div className="beneficios-item">
+            <SlPresent className="beneficios-icon" />
+            <span>Canje de productos, experiencias, viajes y Gift Cards.</span>
+          </div>
+
+          <div className="beneficios-item">
+            <AiOutlineCreditCard className="beneficios-icon" />
+            <span>Promociones especiales, cupones de descuento y más.</span>
           </div>
         </div>
       </div>
