@@ -69,13 +69,15 @@ body {
 }
 
 .document-type {
-  flex: 1;
-  padding: 8px 0; 
-  border: none; 
-  border-bottom: 1px solid #ccc; 
-  font-size: 16px;
-  outline: none;
-  background-color: transparent; 
+  border: none; /* Elimina el borde */
+  background: transparent; /* Fondo transparente */
+  outline: none; /* Elimina el outline al enfocar */
+  appearance: none; /* Elimina la apariencia predeterminada del select */
+  -webkit-appearance: none; /* Para compatibilidad con navegadores basados en WebKit */
+  -moz-appearance: none; /* Para compatibilidad con Firefox */
+  padding: 8px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #333; /* Color del texto */
 }
 
 .document-type:focus {

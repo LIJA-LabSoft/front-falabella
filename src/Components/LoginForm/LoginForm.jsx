@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import  './LoginForm.css';
-import { FiEyeOff} from 'react-icons/fi';
 import { RiCloseLargeFill } from "react-icons/ri";
+import { FiEyeOff, FiEye } from 'react-icons/fi';
 
 
 export const LoginForm = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
     return (
         <div className = 'wrapper'>
         <form action="">

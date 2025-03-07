@@ -137,12 +137,12 @@ export const Registro = () => {
           </div>
 
           <div className="beneficios-item">
-            <SlPresent className="beneficios-icon" />
+            < AiOutlineCreditCard className="beneficios-icon" />
             <span>Canje de productos, experiencias, viajes y Gift Cards.</span>
           </div>
 
           <div className="beneficios-item">
-            <AiOutlineCreditCard className="beneficios-icon" />
+            <SlPresent className="beneficios-icon" />
             <span>Promociones especiales, cupones de descuento y más.</span>
           </div>
         </div>
