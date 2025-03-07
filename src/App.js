@@ -1,9 +1,9 @@
-import {LoginForm} from "./Components/LoginForm/LoginForm";
+import {Header} from "./Components/Header/Header";
 
 function App() {
   return (
     <div>
-      <LoginForm/> 
+      <Header/> 
     </div>
   );
 }
