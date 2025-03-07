@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import {LoginForm} from "../LoginForm/LoginForm";
+import {Menu} from '../Menu/Menu'; 
 import './Header.css';
 import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io"; 
 import { IoCartOutline } from "react-icons/io5";
 
 export const Header = () => {
     const [isPopupVisible, setIsPopupVisible] = useState(false); 
+    const [isLoginVisible, setIsLoginVisible] = useState(false);
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
+
     return(
         <div className="header">
             <div className="subheader-top">
@@ -31,9 +36,11 @@ export const Header = () => {
                     </div>
                     <div className="Menu">
                         <ul className="nav-list">
-                            <li><a href= "#menu" className="nav-link">☰ Menú</a></li>
+                            <li><a href="javascript:void(0);" onClick={() => setIsMenuVisible(!isMenuVisible)} className="nav-link">☰ Menú</a>
+                            </li>
                         </ul>
                     </div>
+                    {isMenuVisible && <Menu />}
                     <div className="search-bar">
                         <input type="text" placeholder="Buscar en falabella.com" />
                         <div className="search-icon-container">
@@ -52,12 +59,21 @@ export const Header = () => {
                         {isPopupVisible && (
                             <div className="user-popup">
                                 <div className="popup-content">
-                                    <a href="#iniciar-sesion">Inicia sesión</a>
+                                    <a href="javascript:void(0);" onClick={() => setIsLoginVisible(true)}>Inicia sesión</a>
                                     <a href="#registrarse">Regístrate</a>
                                     <a href="#mi-cuenta">Mi cuenta</a>
                                 </div>
                             </div>
                         )}
+                        {isLoginVisible && (
+                            <div className="login-modal">
+                                <div className="login-container">
+                                    <button onClick={() => setIsLoginVisible(false)}>Cerrar</button>
+                                    <LoginForm />
+                                </div>
+                            </div>
+                        )}
+
                     </div>
 
                     <nav>
