@@ -60,8 +60,8 @@ export const Header = () => {
                             <div className="user-popup">
                                 <div className="popup-content">
                                     <a href="javascript:void(0);" onClick={() => setIsLoginVisible(true)}>Inicia sesión</a>
-                                    <a href="#registrarse">Regístrate</a>
-                                    <a href="#mi-cuenta">Mi cuenta</a>
+                                    <a href="#registrarse" onClick={() => setIsLoginVisible(false)}>Regístrate</a>
+                                    <a href="#mi-cuenta" onClick={() => setIsLoginVisible(false)}>Mi cuenta</a>
                                 </div>
                             </div>
                         )}
