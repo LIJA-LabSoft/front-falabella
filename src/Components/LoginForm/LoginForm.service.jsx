@@ -6,7 +6,7 @@ export function useLogin() {
   const [error, setError] = useState(null); // Estado para manejar errores
   const [userData, setUserData] = useState(null); // Estado para almacenar los datos del usuario
 
-  const login = async (email, contrasena) => {
+  const login = async (correo, contrasena) => {
     setIsLoading(true); // Activa el estado de carga
     setError(null); // Limpia cualquier error previo
 
@@ -17,7 +17,7 @@ export function useLogin() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({email, contrasena }), // Envía las credenciales
+        body: JSON.stringify({correo, contrasena }), // Envía las credenciales
       });
 
       // Verifica si la respuesta es exitosa

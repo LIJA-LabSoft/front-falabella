@@ -6,7 +6,7 @@ import "./LoginForm.css";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
+  const [correo, setEmail] = useState("");
   const [contrasena, setPassword] = useState("");
 
   // Usa el hook useLogin
@@ -21,7 +21,7 @@ export const LoginForm = () => {
 
     try {
       // Llama a la función login del servicio
-      const response = await login(email, contrasena);
+      const response = await login(correo, contrasena);
       console.log("Inicio de sesión exitoso:", response);
 
       // Aquí puedes redirigir al usuario o guardar el token en localStorage
@@ -56,7 +56,7 @@ export const LoginForm = () => {
           <input
             type="text"
             placeholder="Ingresa tu correo electrónico"
-            value={email}
+            value={correo}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
